@@ -115,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   borderRadius: BorderRadius.circular(25.0),
                   color: Colors.blueGrey,
                 ),
-                child: Center(child: Text('this is a Text')),
+                child: Center(child: Text('this is not a text')),
               ),
               Container(
                 height: 100.0,
