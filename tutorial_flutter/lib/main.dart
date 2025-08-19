@@ -24,10 +24,34 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text('Flutter Demo Home Page'),
-          centerTitle: false,
-          leading: Icon(Icons.login),
-          actions: [Text('Action 1'), Icon(Icons.login)],
-          backgroundColor: Colors.teal,
+          centerTitle: true,
+        ),
+        floatingActionButton: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            FloatingActionButton(
+              onPressed: () {
+                print('Floating Action Button Pressed');
+              },
+              child: Icon(Icons.add),
+            ),
+            SizedBox(height: 10), // Add some space between buttons
+            FloatingActionButton(
+              onPressed: () {
+                print('Floating Action Button Pressed');
+              },
+              child: Icon(Icons.add),
+            ),
+          ],
+        ),
+        bottomNavigationBar: NavigationBar(
+          destinations: [
+            NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+            NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
+          ],
+          selectedIndex: 0,
+          onDestinationSelected: (int value) {},
+          // Handle navigation logic here
         ),
       ),
     ); //theme for app
