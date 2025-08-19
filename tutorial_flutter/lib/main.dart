@@ -100,35 +100,33 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Container(
-          color: Colors.black38,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                height: 100.0,
-                width: 100.0,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white, width: 0.5),
-                  borderRadius: BorderRadius.circular(25.0),
-                  color: Colors.blueGrey,
-                ),
-                child: Center(child: Text('this is not a text')),
-              ),
-              Container(
-                height: 100.0,
-                width: 100.0,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white, width: 0.5),
-                  borderRadius: BorderRadius.circular(25.0),
-                  color: Colors.blueGrey,
+      body: Container(
+        child: Stack(
+          children: [
+            SizedBox(
+              //for height, width and child
+              height: 300,
+              child: Center(
+                child: Text(
+                  'Flutter',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
                 ),
               ),
-            ],
-          ),
+            ),
+            ListTile(
+              leading: Icon(Icons.join_full),
+              tileColor: Colors.red,
+              title: Text('Item1'),
+              trailing: Text('description'),
+              onTap: () {
+                print('Item1 tapped');
+              },
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
