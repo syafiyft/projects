@@ -101,31 +101,34 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Container(
-              height: 100.0,
-              width: 100.0,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.white, width: 0.5),
-                borderRadius: BorderRadius.circular(25.0),
-                color: Colors.blueGrey,
+        child: Container(
+          color: Colors.black38,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                height: 100.0,
+                width: 100.0,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white, width: 0.5),
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Colors.blueGrey,
+                ),
+                child: Center(child: Text('this is a Text')),
               ),
-            ),
-            Container(
-              height: 100.0,
-              width: 100.0,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.white, width: 0.5),
-                borderRadius: BorderRadius.circular(25.0),
-                color: Colors.blueGrey,
+              Container(
+                height: 100.0,
+                width: 100.0,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white, width: 0.5),
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Colors.blueGrey,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
