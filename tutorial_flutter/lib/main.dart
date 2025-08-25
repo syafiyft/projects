@@ -18,6 +18,8 @@ class MyApp extends StatefulWidget {
   @override
   State<MyApp> createState() => _MyAppState();
 }
+//arrow function is for one line function
+//multi line function use {}
 
 class _MyAppState extends State<MyApp> {
   int currentIndex = 0;
