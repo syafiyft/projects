@@ -12,6 +12,7 @@ class _ProfilePageState extends State<ProfilePage> {
   bool? isChecked = false;
   bool isSwitched = false;
   double sliderValue = 0.0;
+  String? menuItem = 'e1';
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +22,19 @@ class _ProfilePageState extends State<ProfilePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            DropdownButton(
+              value: menuItem,
+              items: [
+                DropdownMenuItem(value: 'e1', child: Text('Item 1')),
+                DropdownMenuItem(value: 'e2', child: Text('Item 2')),
+                DropdownMenuItem(value: 'e3', child: Text('Item 3')),
+              ],
+              onChanged: (String? value) {
+                setState(() {
+                  menuItem = value;
+                });
+              },
+            ),
             TextField(
               controller: controller,
               decoration: InputDecoration(border: OutlineInputBorder()),
@@ -76,16 +90,32 @@ class _ProfilePageState extends State<ProfilePage> {
                 print(value);
               },
             ),
-            GestureDetector(
+            InkWell(
+              splashColor: Colors.teal,
+              highlightColor: Colors.red,
               onTap: () {
                 print('Image Clicked');
               },
-              child: Image.asset(
-                'assets/images/bg.jpg',
-                height: 200,
-                width: 200,
+              child: Container(
+                height: 50,
+                width: double.infinity,
+                color: Colors.white12,
               ),
             ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.teal,
+                foregroundColor: Colors.white,
+              ),
+              child: Text('Click Me'),
+            ),
+            ElevatedButton(onPressed: () {}, child: Text('Click Me')),
+            OutlinedButton(onPressed: () {}, child: Text('Click Me')),
+            TextButton(onPressed: () {}, child: Text('Click Me')),
+            FilledButton(onPressed: () {}, child: Text('Click Me')),
+            BackButton(),
+            CloseButton(),
           ],
         ),
       ),
