@@ -1,6 +1,7 @@
 import 'package:assessment_aem/data/notifiers.dart';
 import 'package:assessment_aem/views/pages/home_page.dart';
 import 'package:assessment_aem/views/pages/profile_page.dart';
+import 'package:assessment_aem/views/pages/settings_page.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/navbar_widget.dart';
@@ -26,6 +27,19 @@ class WidgetTree extends StatelessWidget {
                 return Icon(isDarkMode ? Icons.light_mode : Icons.dark_mode);
               },
             ),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return SettingsPage();
+                  },
+                ),
+              );
+            },
+            icon: Icon(Icons.settings),
           ),
         ],
       ),
