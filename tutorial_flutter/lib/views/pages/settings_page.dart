@@ -45,6 +45,28 @@ class _SettingsPageState extends State<SettingsPage> {
                 },
                 child: Text('Open Snackbar'),
               ),
+              ElevatedButton(
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: Text('Alert Title'),
+                        content: Text('Alert Dialog'),
+                        actions: [
+                          FilledButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text('Close'),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
+                child: Text('Open Dialog'),
+              ),
               DropdownButton(
                 value: menuItem,
                 items: [
